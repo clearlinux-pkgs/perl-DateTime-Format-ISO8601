@@ -4,14 +4,14 @@
 #
 Name     : perl-DateTime-Format-ISO8601
 Version  : 0.08
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/J/JH/JHOBLITT/DateTime-Format-ISO8601-0.08.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/J/JH/JHOBLITT/DateTime-Format-ISO8601-0.08.tar.gz
 Summary  : 'Parses ISO8601 formats'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl GPL-2.0
-Requires: perl-DateTime-Format-ISO8601-data = %{version}-%{release}
 Requires: perl-DateTime-Format-ISO8601-license = %{version}-%{release}
+Requires: perl-DateTime-Format-ISO8601-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(DateTime)
 BuildRequires : perl(DateTime::Format::Builder)
@@ -24,18 +24,9 @@ DateTime::Format::ISO8601
 Parses almost all ISO8601 date and time formats.
 ISO8601 time-intervals will be supported in a later release.
 
-%package data
-Summary: data components for the perl-DateTime-Format-ISO8601 package.
-Group: Data
-
-%description data
-data components for the perl-DateTime-Format-ISO8601 package.
-
-
 %package dev
 Summary: dev components for the perl-DateTime-Format-ISO8601 package.
 Group: Development
-Requires: perl-DateTime-Format-ISO8601-data = %{version}-%{release}
 Provides: perl-DateTime-Format-ISO8601-devel = %{version}-%{release}
 Requires: perl-DateTime-Format-ISO8601 = %{version}-%{release}
 
@@ -49,6 +40,15 @@ Group: Default
 
 %description license
 license components for the perl-DateTime-Format-ISO8601 package.
+
+
+%package perl
+Summary: perl components for the perl-DateTime-Format-ISO8601 package.
+Group: Default
+Requires: perl-DateTime-Format-ISO8601 = %{version}-%{release}
+
+%description perl
+perl components for the perl-DateTime-Format-ISO8601 package.
 
 
 %prep
@@ -91,11 +91,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %files
 %defattr(-,root,root,-)
 
-%files data
-%defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/DateTime/Format/ISO8601.pm
-/usr/lib/perl5/vendor_perl/5.28.2/DateTime/Format/ISO8601.pod
-
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/DateTime::Format::ISO8601.3
@@ -103,3 +98,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/perl-DateTime-Format-ISO8601/f235ba4160673bcb7c9d58c2f09dbc7fc0efadea
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.28.2/DateTime/Format/ISO8601.pm
+/usr/lib/perl5/vendor_perl/5.28.2/DateTime/Format/ISO8601.pod
