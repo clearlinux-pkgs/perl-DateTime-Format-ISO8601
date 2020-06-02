@@ -4,7 +4,7 @@
 #
 Name     : perl-DateTime-Format-ISO8601
 Version  : 0.08
-Release  : 4
+Release  : 5
 URL      : https://cpan.metacpan.org/authors/id/J/JH/JHOBLITT/DateTime-Format-ISO8601-0.08.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/J/JH/JHOBLITT/DateTime-Format-ISO8601-0.08.tar.gz
 Summary  : 'Parses ISO8601 formats'
@@ -102,5 +102,5 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.2/DateTime/Format/ISO8601.pm
-/usr/lib/perl5/vendor_perl/5.30.2/DateTime/Format/ISO8601.pod
+/usr/lib/perl5/vendor_perl/5.30.3/DateTime/Format/ISO8601.pm
+/usr/lib/perl5/vendor_perl/5.30.3/DateTime/Format/ISO8601.pod
