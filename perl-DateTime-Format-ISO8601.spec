@@ -4,12 +4,13 @@
 #
 Name     : perl-DateTime-Format-ISO8601
 Version  : 0.16
-Release  : 8
+Release  : 9
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Format-ISO8601-0.16.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Format-ISO8601-0.16.tar.gz
 Summary  : 'Parses ISO8601 formats'
 Group    : Development/Tools
-License  : Artistic-1.0-Perl
+License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
+Requires: perl-DateTime-Format-ISO8601-license = %{version}-%{release}
 Requires: perl-DateTime-Format-ISO8601-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(DateTime)
@@ -40,6 +41,14 @@ Requires: perl-DateTime-Format-ISO8601 = %{version}-%{release}
 
 %description dev
 dev components for the perl-DateTime-Format-ISO8601 package.
+
+
+%package license
+Summary: license components for the perl-DateTime-Format-ISO8601 package.
+Group: Default
+
+%description license
+license components for the perl-DateTime-Format-ISO8601 package.
 
 
 %package perl
@@ -77,6 +86,8 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-DateTime-Format-ISO8601
+cp %{_builddir}/DateTime-Format-ISO8601-0.16/LICENSE %{buildroot}/usr/share/package-licenses/perl-DateTime-Format-ISO8601/93c8de1b907e38cb6d6df92419c40c81c8afe7ad
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -95,7 +106,11 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/DateTime::Format::ISO8601.3
 /usr/share/man/man3/DateTime::Format::ISO8601::Types.3
 
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-DateTime-Format-ISO8601/93c8de1b907e38cb6d6df92419c40c81c8afe7ad
+
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.3/DateTime/Format/ISO8601.pm
-/usr/lib/perl5/vendor_perl/5.30.3/DateTime/Format/ISO8601/Types.pm
+/usr/lib/perl5/vendor_perl/5.32.1/DateTime/Format/ISO8601.pm
+/usr/lib/perl5/vendor_perl/5.32.1/DateTime/Format/ISO8601/Types.pm
