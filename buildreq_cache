@@ -1,14 +1,10 @@
-0.16
+0.17
 perl(DateTime)
 perl(DateTime::Format::Builder)
 perl(DateTime::Format::Strptime)
-perl(Importer)
-perl(Params::Validate)
 perl(Params::ValidationCompiler)
 perl(Specio)
 perl(Specio::Declare)
 perl(Specio::Exporter)
 perl(Specio::Library::Builtins)
-perl(Sub::Info)
-perl(Test2::V0)
 perl(namespace::autoclean)
