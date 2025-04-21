@@ -7,7 +7,7 @@
 #
 Name     : perl-DateTime-Format-ISO8601
 Version  : 0.17
-Release  : 28
+Release  : 29
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Format-ISO8601-0.17.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Format-ISO8601-0.17.tar.gz
 Summary  : 'Parses ISO8601 formats'
